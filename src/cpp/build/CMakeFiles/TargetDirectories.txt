@@ -1,0 +1,3 @@
+/mnt/c/Users/Pavel/Desktop/TRAFFIC_MODEL/src/cpp/build/CMakeFiles/main.dir
+/mnt/c/Users/Pavel/Desktop/TRAFFIC_MODEL/src/cpp/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Pavel/Desktop/TRAFFIC_MODEL/src/cpp/build/CMakeFiles/rebuild_cache.dir
