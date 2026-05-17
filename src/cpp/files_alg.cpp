@@ -1,3 +1,4 @@
+
 #include <fstream>
 #include <string>
 #include <vector> 
@@ -17,14 +18,17 @@ void read_file(std::string filepath, Sim* sim_obj){
         in_file.ignore();
         int i = 0;
         while(std::getline(in_file,sim_obj->model_type_args[i], ' ')){
+            sim_obj->model_type_args[i].erase(0, sim_obj->model_type_args[i].find_first_not_of(" \t\n\r\f\v"));
+            sim_obj->model_type_args[i].erase(sim_obj->model_type_args[i].find_last_not_of(" \t\n\r\f\v") + 1);
             i++;
         }
+        
 
     }
     else{
 
         sim_obj->sim_time = 0;
-        sim_obj->model_type_args[0] = "Err";
+        sim_obj->model_type_args[0] = "Err:";
 
     }
 }
