@@ -33,4 +33,16 @@ void read_file(std::string filepath, Sim* sim_obj){
     }
 }
 
+bool save_to_csv(const std::string& filename, std::vector <Packet_info> packets ) {
+        std::ofstream out(filename);
+        if (!out.is_open()) return false;
+
+        out << "time,packet_size\n"; 
+
+        for (size_t i = 0; i < packets.size(); i++) {
+            out << packets[i].time << "," << packets[i].packet_size << "\n";
+        }
+        return true;
+}
+
 
