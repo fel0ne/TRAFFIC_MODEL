@@ -4,6 +4,7 @@
 #include <iostream>
 #include <random>
 #include <chrono>
+#include <fstream>
 
 
 struct Packet_info{
@@ -47,6 +48,18 @@ class uniform_model{
                 std::cout << "Время: " << packets[i].time 
                         << " с, Размер: " << packets[i].packet_size << " байт" << std::endl;
             }
+        }
+
+        bool save_to_csv(const std::string& filename) {
+            std::ofstream out(filename);
+            if (!out.is_open()) return false;
+
+            out << "time,packet_size\n"; 
+
+            for (size_t i = 0; i < packets.size(); i++) {
+                out << packets[i].time << "," << packets[i].packet_size << "\n";
+            }
+            return true;
         }
 
 };
@@ -113,6 +126,18 @@ class poisson_model{
                 std::cout << "Время: " << packets[i].time 
                         << " с, Размер: " << packets[i].packet_size << " байт" << std::endl;
             }
+        }
+
+        bool save_to_csv(const std::string& filename) {
+            std::ofstream out(filename);
+            if (!out.is_open()) return false;
+
+            out << "time,packet_size\n"; 
+
+            for (size_t i = 0; i < packets.size(); i++) {
+                out << packets[i].time << "," << packets[i].packet_size << "\n";
+            }
+            return true;
         }
 
 };

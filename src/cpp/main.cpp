@@ -9,7 +9,7 @@ int main(int argc, char* argv[]){
 
     if(argc == 2){
         Sim * sim_obj = new Sim();
-
+        std::vector <Packet_info> result;
         read_file(argv[1], sim_obj);
 
         if(sim_obj->model_type_args[0] == "Err:"){
@@ -22,6 +22,7 @@ int main(int argc, char* argv[]){
 
             test.start_sim(sim_obj->sim_time);
             test.print_packets(3);
+            test.save_to_csv("result.csv");
 
         }
         else if(sim_obj->model_type_args[0] == "poisson:"){
@@ -30,6 +31,7 @@ int main(int argc, char* argv[]){
 
             test.start_sim(sim_obj->sim_time);
             test.print_packets(3);
+            test.save_to_csv("result.csv");
         }
         else{
             std::cout << "Такой модели не существует" << std::endl;
