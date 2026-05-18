@@ -56,7 +56,7 @@ chmod +x start_simulation.sh
 uniform: 10 10
 ```
 
-Пуассоновская (pausson:)
+Пуассоновская (poisson:)
 Формат: poisson: <лямбда_интервала> <лямбда_размера>
 Пример (test2.txt):
 
